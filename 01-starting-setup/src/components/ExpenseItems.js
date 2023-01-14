@@ -1,16 +1,17 @@
+import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItems.css"
 
 
-// Creating a expense item components
+// Creating a expense item components and props
 function ExpenseItems(props) {
-    // To create date object
-// const expenseDate = new Date("2023-01-14");
-// const expenseTitle="Car Insurance"
-// const expenseAmount="$250.60"
+   
 
   return (
+   
     <div className="expense-item">
-      <div>{props.date.toISOString()}</div>
+        {/* Here we are passing props data from one compnent 
+        to another componet thus props.date is used */}
+         <ExpenseDate date={props.date}/>
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
